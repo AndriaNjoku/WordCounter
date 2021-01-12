@@ -1,16 +1,43 @@
 # WordCounterAndroid
-Got tired of looking up word counter websites so i built a simple light app that does exactly what i need, count words, without having to google and all that work.
 
-Copyright 2019 Ben Sadiku
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
+Book Word Counter using:
+- Dagger2
+- RX Kotlin
+- Retrofit 
 
-   http://www.apache.org/licenses/LICENSE-2.0
+Copyright 2021 Andria Njoku
 
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+
+Screens:
+
+Screen 1 : Book selection
+
+Screen2: Word Count Screen
+
+Here you can select the book to have its words counted.
+Initially the app will make a call to get the book from the nertwork and will count the words.
+The book will then be downloaded to the internal storage.
+Once downloaded the app will load the book from the internal storage when counting words.
+
+features: 
+
+1. Word Counter 
+2. isPrime : Will calculate if the number of times each word occurs is a prime number.
+3. Book download indicator: Shows green when the book has been downloaded and red when not.
+
+Unit testing :
+
+There are unit tests for all use cases and presenters.
+
+Extensions:
+
+The app is designed to be able to add any book available in .txt format on the internet.
+
+How to add additional books:
+
+1. Add predicate to select a new base url if it differs from the exiating one provided by retrofit
+3. Add the new book to the BOOKS enum 
+4. Add a method to presenter for the book 
+4. Add a branch to the when in the getBookLocal/ getBookNet then define the local file name and the endpoint to fetch the book using retrofit
+
